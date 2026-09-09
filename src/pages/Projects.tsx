@@ -32,11 +32,11 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="relative min-h-screen py-24 bg-white text-black font-geist">
+    <section className="relative min-h-screen py-24 bg-transparent text-black font-geist">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-20">
           <p className="animate-in text-[10px] uppercase tracking-[0.5em] text-zinc-400 mb-4">
-            03 — Selected Case Studies
+            04 — Selected Case Studies
           </p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="animate-in delay-100 text-6xl md:text-8xl font-bold tracking-tighter leading-none">

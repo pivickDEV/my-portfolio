@@ -102,79 +102,75 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="relative min-h-screen py-24 bg-white text-black font-geist">
+    <section className="relative min-h-screen py-24 bg-transparent text-black font-geist">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-20">
           <p className="animate-in text-[10px] uppercase tracking-[0.5em] text-zinc-400 mb-4">
-            02 — Technical Capabilities
+            03 — Technical Capabilities
           </p>
-          <h2 className="animate-in delay-100 text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-6">
-            EXPERT<span className="text-zinc-300">ISE.</span>
-          </h2>
-          <div className="animate-in delay-200 h-px w-full bg-zinc-100 mb-8" />
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="animate-in delay-100 text-6xl md:text-8xl font-bold tracking-tighter leading-none">
+              EXPERTISE<span className="text-zinc-300">.</span>
+            </h2>
+            <p className="animate-in delay-200 text-sm text-zinc-500 max-w-xs font-sans pb-2">
+              Engineered for modularity, speed, and cross-platform performance.
+            </p>
+          </div>
+          <div className="animate-in delay-200 h-px w-full bg-zinc-100 mt-8" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-zinc-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {skillCategories.map((cat, idx) => (
             <div
               key={idx}
-              className={`animate-in bg-white p-8 group border-r border-b border-zinc-100 group hover:bg-zinc-50 transition-colors duration-500 delay-${(idx + 1) * 100}`}
+              className={`animate-in group flex flex-col justify-between delay-${
+                (idx + 1) * 100
+              }`}
             >
-              <div className="flex justify-between items-start mb-8">
-                <div className="p-3 border border-zinc-100 group-hover:border-black transition-colors duration-500">
-                  {React.cloneElement(
-                    cat.icon as React.ReactElement<
-                      React.SVGProps<SVGSVGElement>
-                    >,
-                    {
-                      className: "w-5 h-5",
-                    },
-                  )}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-400">
+                    {cat.tag}
+                  </span>
+                  <div className="text-zinc-400 group-hover:text-black transition-colors">
+                    {React.cloneElement(
+                      cat.icon as React.ReactElement<
+                        React.SVGProps<SVGSVGElement>
+                      >,
+                    )}
+                  </div>
                 </div>
-                <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase border border-zinc-100 px-2 py-1">
-                  [{cat.tag}]
-                </span>
-              </div>
 
-              <h3 className="text-xl font-bold tracking-tight mb-6 uppercase">
-                {cat.title}
-              </h3>
+                <h3 className="text-2xl font-bold tracking-tight mb-4 group-hover:text-zinc-600 transition-colors">
+                  {cat.title}
+                </h3>
 
-              <ul className="space-y-3">
-                {cat.items.map((skill, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-3">
-                    <div className="w-1 h-1 bg-zinc-300 group-hover:bg-black transition-colors" />
-                    <span className="text-sm font-sans text-zinc-500 group-hover:text-black transition-colors duration-300">
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {cat.items.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="text-[12px] bg-black text-white px-2 py-0.5 font-mono uppercase tracking-tighter"
+                    >
                       {skill}
                     </span>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-px w-full bg-zinc-100 group-hover:bg-black transition-colors duration-500" />
             </div>
           ))}
         </div>
 
-        <div className="mt-20 animate-in delay-500">
-          <div className="border border-zinc-100 p-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-zinc-50/50">
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.3em] mb-2 text-zinc-400">
-                Primary Architecture Focus
-              </h4>
-              <p className="text-2xl font-bold tracking-tighter">
-                MERN STACK <span className="text-zinc-300">/</span> TYPESCRIPT{" "}
-                <span className="text-zinc-300">/</span> QA AUTOMATION
-              </p>
-            </div>
-            <div className="flex gap-2">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="w-2 h-2 bg-black opacity-10 animate-pulse"
-                  style={{ animationDelay: `${i * 200}ms` }}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="mt-24 animate-in delay-500 border-t border-zinc-100 pt-12 flex flex-col items-center text-center">
+          <FiLayers className="text-zinc-200 mb-4" size={32} />
+          <h4 className="text-xs uppercase tracking-[0.4em] font-bold text-zinc-400 mb-2">
+            Primary Architecture Focus
+          </h4>
+          <p className="text-2xl md:text-3xl font-bold tracking-tighter text-black">
+            MERN STACK <span className="text-zinc-300">/</span> TYPESCRIPT{" "}
+            <span className="text-zinc-300">/</span> QA AUTOMATION
+          </p>
         </div>
       </div>
     </section>

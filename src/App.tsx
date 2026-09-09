@@ -19,7 +19,7 @@ const AppLayout = () => {
   const isProjectPage = location.pathname.startsWith("/projects/");
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen ">
       {!isProjectPage && <Sidebar />}
       <div
         className={`flex-1 transition-all duration-300 ${!isProjectPage ? "md:ml-64 pt-16 md:pt-0" : ""}`}

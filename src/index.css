@@ -6,13 +6,19 @@
   --font-geist: "Geist Pixel", sans-serif;
 }
 
+body {
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
 @layer utilities {
   .font-geist {
     font-family: var(--font-geist);
   }
-}
 
-@layer utilities {
   .animate-in {
     animation: slideUp 0.8s ease-out forwards;
     opacity: 0;
@@ -37,6 +43,21 @@
   }
   .delay-300 {
     animation-delay: 300ms;
+  }
+}
+
+@keyframes dynamicGridPulse {
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
   }
 }
 
